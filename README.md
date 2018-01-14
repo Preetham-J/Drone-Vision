@@ -7,8 +7,7 @@ to input video data to my computer, interpret the data collected, and send out i
 ![alt text](drone.jpg?raw=true "Drone")
 
 ## Current Stage
-I am currently exploring computer vision by learing how to use OpenCV (computer vision library) on Python. As time goes on, I'll be adding
-any relevant tutorial projects here.
+I am currently exploring computer vision by learning how to use OpenCV (computer vision library) on Python. As time goes on, I'll be adding any relevant tutorial projects here.
 
 ### Shape Detection
 I've added a shape detection program that detects squares, rectangles, circles, and pentagons. This will be useful in the future to allow
