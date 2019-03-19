@@ -1,22 +1,19 @@
 # Drone Vision
-After assembling and testing my quad-copter camera drone (shown below), I'm currently looking into giving it the ability to autonomously
-make basic decisions (ex. take-off, hover, land). Seeing as it has a camera on it, my ultimate goal with this project is to use a receiver
-to input video data to my computer, interpret the data collected, and send out instructions through a transmitter.
+After assembling and testing my quad-copter camera drone (shown below), I'm currently looking into using computer vision to analyze basic drone footage. Seeing as it has a camera on it, my ultimate goal with this project is to use a receiver to input video data to my computer and interpret the video collected. From there, detection information can be presented, or instructions can be sent out through a transmitter.
 
 ## Drone:
 ![alt text](drone.jpg?raw=true "Drone")
 
 ## Current Stage
-I am currently exploring computer vision by learning how to use OpenCV (computer vision library) on Python. As time goes on, I'll be adding any relevant tutorial projects here.
+I am currently exploring object detection using OpenCV's C++ library. The goal for this stage is to get my program to the point where drone footage can be inputted, and detection information can be presented to the user. 
 
 ### Shape Detection
-I've added a shape detection program that detects squares, rectangles, circles, and pentagons. This will be useful in the future to allow
-the drone to recognize signs (ex. landing zone areas).
+As an introduction to OpenCV's Python library, I created a basic shape detection program that detects squares, rectangles, circles, and pentagons:
 
 Image Inputted:
-![alt text](/Shape_Detection/shapes.png?raw=true "Inputted Image")
+![alt text](/shape_Detection/shapes.png?raw=true "Inputted Image")
 Image Outputted:
-![alt text](/Shape_Detection/detection.PNG?raw=true "Outputted Image")
+![alt text](/shape_Detection/detection.PNG?raw=true "Outputted Image")
 
 ## How to Use
 To use all the files, make sure you have the following installed: OpenCV, Matplotlib, NumPy, SciPy and imutils.
