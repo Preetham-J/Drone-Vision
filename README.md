@@ -11,9 +11,9 @@ I am currently exploring object detection using OpenCV's C++ library. The goal f
 As an introduction to OpenCV's Python library, I created a basic shape detection program that detects squares, rectangles, circles, and pentagons:
 
 Image Inputted:
-![alt text](/shape_Detection/shapes.png?raw=true "Inputted Image")
+![alt text](/shape_detection/shapes.png?raw=true "Inputted Image")
 Image Outputted:
-![alt text](/shape_Detection/detection.PNG?raw=true "Outputted Image")
+![alt text](/shape_detection/detection.PNG?raw=true "Outputted Image")
 
 ## How to Use
 To use all the files, make sure you have the following installed: OpenCV, Matplotlib, NumPy, SciPy and imutils.
