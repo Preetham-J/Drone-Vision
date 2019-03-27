@@ -91,18 +91,25 @@ int main(int argc, char** argv)
     net.setPreferableTarget(parser.get<int>("target"));
     std::vector<String> outNames = net.getUnconnectedOutLayersNames();
 
-    // Create a window
+    // Create a window for displaying output.
     static const std::string kWinName = "Deep learning object detection in OpenCV";
     namedWindow(kWinName, WINDOW_NORMAL);
     int initialConf = (int)(confThreshold * 100);
     createTrackbar("Confidence threshold, %", kWinName, &initialConf, 99, callback);
 
-    // Open a video file or an image file or a camera stream.
+    // Create VideoCapture to input a video file, image file, or camera stream.
     VideoCapture cap;
     if (parser.has("input"))
         cap.open(parser.get<String>("input"));
     else
         cap.open(parser.get<int>("device"));
+
+    // Get input video width and height.
+    int frame_width = cap.get(CV_CAP_PROP_FRAME_WIDTH);
+    int frame_height = cap.get(CV_CAP_PROP_FRAME_HEIGHT);
+
+    // Create VideoWrite for output to a video file.
+    VideoWriter writer("output.avi", CV_FOURCC('M','J','P','G'), 10, Size(frame_width,frame_height));
 
     // Process frames.
     Mat frame, blob;
@@ -140,8 +147,14 @@ int main(int argc, char** argv)
         std::string label = format("Inference time: %.2f ms", t);
         putText(frame, label, Point(0, 15), FONT_HERSHEY_SIMPLEX, 0.5, Scalar(0, 255, 0));
 
+        // Display the annotated frame and save it to output video file.
         imshow(kWinName, frame);
+        writer.write(frame);
     }
+
+    // Release VideoCapture and VideoWriter
+    cap.release();
+    writer.release();
     return 0;
 }
 
